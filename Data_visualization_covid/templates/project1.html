@@ -1,0 +1,224 @@
+<head>
+    <title>Foodpollo</title>
+
+    <!--import script files needed from plotly and bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+html, h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald";
+}
+</style>
+
+    <link rel="stylesheet" type="text/css" href="../static/styles/custom.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+</head>
+
+
+
+<body>
+
+<!--navbar links-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="bg-right">
+    <h1>FOODPOLLO</h1>
+        <p></p>
+        <br>
+        <br>
+        <p></p>
+</div>
+    <a class="navbar-brand">Your One Stop For Food Healthiness!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="index">Home |</a>
+            </li>
+            <li class="nav-item">
+                <a class='active-page' href="project1">Food Recommendations |</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="recipefinder">Health Score Predictor |</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="recipe_downloader">Download Recipe Data |</a>
+            </li>
+
+
+
+        </ul>
+    </div>
+
+
+</nav>
+
+<div class="row" style="margin:0 auto; padding-top: 50px; padding-bottom: 50px">
+    <div class="column">
+        <img src="../static/images/recipe1.jpeg" alt="Healthy Recipe" height="200" width="218">
+    </div>
+    <div class="column">
+        <img src="../static/images/recipe2.jpeg" alt="Healthy Recipe" height="200" width="218">
+    </div>
+    <div class="column">
+        <img src="../static/images/recipe3.jpeg" alt="Healthy Recipe" height="200" width="218">
+       </div>
+        <div class="column">
+            <img src="../static/images/recipe4.jpeg" alt="Healthy Recipe" height="200" width="218">
+        </div>
+        <div class="column">
+            <img src="../static/images/recipe6.jpeg" alt="Healthy Recipe" height="200" width="218">
+        </div>
+        <div class="column">
+            <img src="../static/images/recipe7.jpeg" alt="Healthy Recipe" height="200" width="218">
+        </div>
+
+</div>
+
+
+<div class="movie">
+
+    <h1 style="text-align:center;"><u>Recommendation Information:</u></h1>
+
+    <p style="text-align:center;"><u><mark>When you're done click submit to see your recommendations</mark></u></p>
+
+</div>
+
+
+
+<div class='content-section' style="width: 50%; margin:auto;" >
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+
+             <div class="form-group">
+                {{ form.user_id.label(class="form-control-label") }}
+                {{ form.user_id(class="form-control form-control-lg") }}
+            </div>
+
+            <div class="form-group">
+                {{ form.age.label(class="form-control-label") }}
+                {{ form.age(class="form-control form-control-lg") }}
+            </div>
+
+            <div class="form-group">
+                {{ form.weight_lb.label(class="form-control-label") }}
+                {{ form.weight_lb(class= "form-control form-control-lg") }}
+            </div>
+
+            <div class="form-group">
+                {{ form.height_in.label(class="form-control-label") }}
+                {{ form.height_in(class= "form-control form-control-lg") }}
+            </div>
+
+            <div class="form-group">
+                {{ form.living_area.label(class="form-control-label") }}
+                {{ form.living_area(class= "form-control form-control-lg") }}
+            </div>
+
+
+            <div class="form-group">
+                {{ form.race.label(class="form-control-label") }}
+                {{ form.race(class= "form-control form-control-lg") }}
+            </div>
+
+            <div class="form-group">
+                {{ form.living_arrangement.label(class="form-control-label") }}
+                {{ form.living_arrangement(class= "form-control form-control-lg") }}
+            </div>
+
+            <div class="form-group">
+                {{ form.sexuality.label(class="form-control-label") }}
+                {{ form.sexuality(class= "form-control form-control-lg") }}
+            </div>
+
+            <div class="form-group">
+                {{ form.groceries.label(class="form-control-label") }}
+                {{ form.groceries(class= "form-control form-control-lg") }}
+            </div>
+
+            <div class="form-group">
+                {{ form.allergies.label(class="form-control-label") }}
+                {{ form.allergies(class= "form-control form-control-lg") }}
+            </div>
+
+            <div class="form-group">
+                {{ form.diet.label(class="form-control-label") }}
+                {{ form.diet(class= "form-control form-control-lg") }}
+            </div>
+
+            <div class="form-group">
+                {{ form.distance_home_store.label(class="form-control-label") }}
+                {{ form.distance_home_store(class= "form-control form-control-lg") }}
+            </div>
+
+            <div class="form-group">
+                {{ form.transportation.label(class="form-control-label") }}
+                {{ form.transportation(class= "form-control form-control-lg") }}
+            </div>
+
+            <div class="form-group">
+                {{ form.health_nutrition_statements.label(class="form-control-label") }}
+                {{ form.health_nutrition_statements(class= "form-control form-control-lg") }}
+            </div>
+
+            <div class="form-group">
+                {{ form.eat_out_times.label(class="form-control-label") }}
+                {{ form.eat_out_times(class= "form-control form-control-lg") }}
+            </div>
+
+
+
+            <div class="form-group">
+                {{ form.tastes.label(class="form-control-label") }}
+                {{ form.tastes(class= "form-control form-control-lg") }}
+            </div>
+
+
+        </fieldset>
+        <input type=submit>
+    </form>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</body>
+
+<div class="Recsys">
+    {% for table in recommendations %}
+            {{ table }}
+            <br>
+{% endfor %}
+</div>
+</html>

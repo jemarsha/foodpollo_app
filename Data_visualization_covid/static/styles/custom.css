@@ -1,0 +1,93 @@
+body{
+
+     background-color: navy;
+
+     color: white
+
+}
+
+form {
+ width: 550px;
+ height: 450px;
+ margin: auto;
+ position: relative;
+}
+
+.Recsys{
+
+
+    bottom: 0;
+    width: 100%;
+    padding-top: 1500px;
+
+}
+
+.H_predict{
+
+
+
+
+}
+
+.recipe_ingreds{
+
+    text-align: center;
+}
+
+.input_recipes{
+
+    text-align: center;
+
+}
+
+
+
+.recipe_ing{
+    text-align: center;
+
+}
+
+
+
+.Download_Recipe_Info{
+
+     text-align: center;
+
+}
+
+.bg-right{
+    width: 1px ;
+    height: auto;
+    float: right;
+
+
+
+}
+
+.column{
+    display:inline-block;
+    text-align: center;
+}
+
+
+h2 {
+  background-color: Red;
+    margin: auto;
+  width: 20%;
+  border: 3px solid green;
+  padding: 30px;
+}
+
+
+h4{
+    background-color: Red;
+    margin: auto;
+    width: 200px
+}
+
+h1{
+    font-family:Impact;
+}
+
+
+
